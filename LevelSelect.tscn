@@ -1,0 +1,828 @@
+[gd_scene load_steps=17 format=3 uid="uid://bhw2ykctm8n6c"]
+
+[ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_mv021"]
+[ext_resource type="Texture2D" uid="uid://dwb8aso5hm7ah" path="res://Assets/backButton.png" id="2_dguo6"]
+[ext_resource type="AudioStream" uid="uid://dtw154uliwlmp" path="res://Sounds/clickButton.mp3" id="2_n70vr"]
+[ext_resource type="AudioStream" uid="uid://b540g2lvrejkp" path="res://Sounds/achievementChime.mp3" id="3_02j3r"]
+[ext_resource type="Texture2D" uid="uid://covsuo5q7acyo" path="res://Assets/gameLogoImage.png" id="3_s0urv"]
+[ext_resource type="Texture2D" uid="uid://c2a0idsuv7gn8" path="res://Assets/levelSelectImage.png" id="4_hg4vv"]
+[ext_resource type="Texture2D" uid="uid://0leyxxj1np2b" path="res://Assets/levelChooseBackgroundImage.png" id="5_efqd8"]
+[ext_resource type="Texture2D" uid="uid://chcubnhn2nn7" path="res://Assets/levelButton.png" id="6_00165"]
+[ext_resource type="Texture2D" uid="uid://djhu3hgumf3iv" path="res://Assets/winKeyImage.png" id="7_83er6"]
+[ext_resource type="Texture2D" uid="uid://khuyblsxhdqo" path="res://Assets/resetProgressButton.png" id="8_gormk"]
+[ext_resource type="Texture2D" uid="uid://dtby86vs3i1d7" path="res://Assets/oneStarGameWinImage.png" id="9_dnt1t"]
+[ext_resource type="Texture2D" uid="uid://5ofjsiqa1wlk" path="res://Assets/twoStarGameWinImage.png" id="10_de8ka"]
+[ext_resource type="Texture2D" uid="uid://bjargkb6bl2xy" path="res://Assets/threeStarGameWinImage.png" id="11_hhspr"]
+
+[sub_resource type="SystemFont" id="SystemFont_aeeo6"]
+hinting = 2
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_fo6aq"]
+default_font = SubResource("SystemFont_aeeo6")
+default_font_size = 30
+
+[sub_resource type="GDScript" id="GDScript_pt70i"]
+script/source = "extends Button
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+"
+
+[node name="LevelSelect" type="Node2D"]
+script = ExtResource("1_mv021")
+
+[node name="backgroundColor" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="backgroundColor"]
+offset_right = 375.0
+offset_bottom = 667.0
+color = Color(0.929412, 0.780392, 0.34902, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="backButton" type="Button" parent="."]
+offset_left = 54.0
+offset_top = 2.0
+offset_right = 710.0
+offset_bottom = 112.0
+scale = Vector2(0.416685, 0.416685)
+theme = SubResource("Theme_fo6aq")
+action_mode = 0
+icon = ExtResource("2_dguo6")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="gameLogoImage" type="Sprite2D" parent="."]
+position = Vector2(191, 109)
+scale = Vector2(0.730422, 0.730422)
+texture = ExtResource("3_s0urv")
+
+[node name="levelSelectImage" type="Sprite2D" parent="."]
+position = Vector2(190, 210)
+scale = Vector2(0.802833, 0.802833)
+texture = ExtResource("4_hg4vv")
+
+[node name="levelChooseBackgroundImage" type="Sprite2D" parent="."]
+position = Vector2(190.77, 400.688)
+scale = Vector2(0.824591, 0.824592)
+texture = ExtResource("5_efqd8")
+
+[node name="level1Button" type="Button" parent="."]
+offset_left = 43.0
+offset_top = 262.0
+offset_right = 132.0
+offset_bottom = 351.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level1Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "01"
+horizontal_alignment = 1
+
+[node name="level2Button" type="Button" parent="."]
+offset_left = 104.0
+offset_top = 262.0
+offset_right = 193.0
+offset_bottom = 351.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level2Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.471
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 24.336
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "02"
+horizontal_alignment = 1
+
+[node name="level3Button" type="Button" parent="."]
+offset_left = 165.0
+offset_top = 262.0
+offset_right = 254.0
+offset_bottom = 351.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level3Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "03"
+horizontal_alignment = 1
+
+[node name="level4Button" type="Button" parent="."]
+offset_left = 225.0
+offset_top = 262.0
+offset_right = 314.0
+offset_bottom = 351.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level4Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "04"
+horizontal_alignment = 1
+
+[node name="level5Button" type="Button" parent="."]
+offset_left = 287.0
+offset_top = 262.0
+offset_right = 376.0
+offset_bottom = 351.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level5Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "05
+"
+horizontal_alignment = 1
+
+[node name="level6Button" type="Button" parent="."]
+offset_left = 43.0
+offset_top = 317.0
+offset_right = 132.0
+offset_bottom = 406.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level6Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "06"
+horizontal_alignment = 1
+
+[node name="level7Button" type="Button" parent="."]
+offset_left = 104.0
+offset_top = 317.0
+offset_right = 193.0
+offset_bottom = 406.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level7Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.471
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 24.336
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "07"
+horizontal_alignment = 1
+
+[node name="level8Button" type="Button" parent="."]
+offset_left = 165.0
+offset_top = 317.0
+offset_right = 254.0
+offset_bottom = 406.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level8Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "08"
+horizontal_alignment = 1
+
+[node name="level9Button" type="Button" parent="."]
+offset_left = 225.0
+offset_top = 317.0
+offset_right = 314.0
+offset_bottom = 406.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level9Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "09"
+horizontal_alignment = 1
+
+[node name="level10Button" type="Button" parent="."]
+offset_left = 287.0
+offset_top = 317.0
+offset_right = 376.0
+offset_bottom = 406.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level10Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "10
+"
+horizontal_alignment = 1
+
+[node name="level11Button" type="Button" parent="."]
+offset_left = 43.0
+offset_top = 374.0
+offset_right = 132.0
+offset_bottom = 463.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level11Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "11"
+horizontal_alignment = 1
+
+[node name="level12Button" type="Button" parent="."]
+offset_left = 104.0
+offset_top = 374.0
+offset_right = 193.0
+offset_bottom = 463.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level12Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.471
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 24.336
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "12"
+horizontal_alignment = 1
+
+[node name="level13Button" type="Button" parent="."]
+offset_left = 165.0
+offset_top = 374.0
+offset_right = 254.0
+offset_bottom = 463.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level13Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "13"
+horizontal_alignment = 1
+
+[node name="level14Button" type="Button" parent="."]
+offset_left = 225.0
+offset_top = 374.0
+offset_right = 314.0
+offset_bottom = 463.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level14Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "14"
+horizontal_alignment = 1
+
+[node name="level15Button" type="Button" parent="."]
+offset_left = 287.0
+offset_top = 374.0
+offset_right = 376.0
+offset_bottom = 463.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level15Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "15
+"
+horizontal_alignment = 1
+
+[node name="level16Button" type="Button" parent="."]
+offset_left = 43.0
+offset_top = 431.0
+offset_right = 132.0
+offset_bottom = 520.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level16Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "16"
+horizontal_alignment = 1
+
+[node name="level17Button" type="Button" parent="."]
+offset_left = 104.0
+offset_top = 431.0
+offset_right = 193.0
+offset_bottom = 520.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level17Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.471
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 24.336
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "17"
+horizontal_alignment = 1
+
+[node name="level18Button" type="Button" parent="."]
+offset_left = 165.0
+offset_top = 431.0
+offset_right = 254.0
+offset_bottom = 520.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level18Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "18"
+horizontal_alignment = 1
+
+[node name="level19Button" type="Button" parent="."]
+offset_left = 225.0
+offset_top = 431.0
+offset_right = 314.0
+offset_bottom = 520.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level19Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "19"
+horizontal_alignment = 1
+
+[node name="level20Button" type="Button" parent="."]
+offset_left = 287.0
+offset_top = 431.0
+offset_right = 376.0
+offset_bottom = 520.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level20Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "20
+"
+horizontal_alignment = 1
+
+[node name="level21Button" type="Button" parent="."]
+offset_left = 43.0
+offset_top = 487.0
+offset_right = 132.0
+offset_bottom = 576.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level21Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "21"
+horizontal_alignment = 1
+
+[node name="level22Button" type="Button" parent="."]
+offset_left = 104.0
+offset_top = 487.0
+offset_right = 193.0
+offset_bottom = 576.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level22Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.471
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 24.336
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "22"
+horizontal_alignment = 1
+
+[node name="level23Button" type="Button" parent="."]
+offset_left = 165.0
+offset_top = 487.0
+offset_right = 254.0
+offset_bottom = 576.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level23Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "23"
+horizontal_alignment = 1
+
+[node name="level24Button" type="Button" parent="."]
+offset_left = 225.0
+offset_top = 487.0
+offset_right = 314.0
+offset_bottom = 576.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level24Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "24"
+horizontal_alignment = 1
+
+[node name="level25Button" type="Button" parent="."]
+offset_left = 287.0
+offset_top = 487.0
+offset_right = 376.0
+offset_bottom = 576.0
+scale = Vector2(0.573078, 0.573078)
+theme = SubResource("Theme_fo6aq")
+theme_override_colors/font_color = Color(0.690862, 0.647083, 0.743193, 1)
+action_mode = 0
+icon = ExtResource("6_00165")
+flat = true
+clip_text = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="level25Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 24.255
+offset_top = 23.0
+offset_right = 26.116
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "25
+"
+horizontal_alignment = 1
+
+[node name="winKeyImage" type="Sprite2D" parent="."]
+position = Vector2(189.894, 573.125)
+scale = Vector2(0.483975, 0.483975)
+texture = ExtResource("7_83er6")
+
+[node name="resetProgressButton" type="Button" parent="."]
+offset_left = 45.0
+offset_top = 594.0
+offset_right = 689.0
+offset_bottom = 742.0
+scale = Vector2(0.452812, 0.452812)
+theme = SubResource("Theme_fo6aq")
+action_mode = 0
+icon = ExtResource("8_gormk")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="oneStarGameWinImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(192, 148)
+scale = Vector2(0.334, 0.334)
+texture = ExtResource("9_dnt1t")
+
+[node name="twoStarGameWinImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(192, 148)
+scale = Vector2(0.334, 0.334)
+texture = ExtResource("10_de8ka")
+
+[node name="threeStarGameWinImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(192, 148)
+scale = Vector2(0.334291, 0.334291)
+texture = ExtResource("11_hhspr")
+
+[node name="clickButton" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(62.667, 182.008)
+scale = Vector2(0.331489, 0.331489)
+stream = ExtResource("2_n70vr")
+
+[node name="victoryChime" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(62.667, 182.008)
+scale = Vector2(0.331489, 0.331489)
+stream = ExtResource("3_02j3r")
+
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="level1Button" to="." method="_on_level_pressed" binds= [1]]
+[connection signal="pressed" from="level2Button" to="." method="_on_level_pressed" binds= [2]]
+[connection signal="pressed" from="level3Button" to="." method="_on_level_pressed" binds= [3]]
+[connection signal="pressed" from="level4Button" to="." method="_on_level_pressed" binds= [4]]
+[connection signal="pressed" from="level5Button" to="." method="_on_level_pressed" binds= [5]]
+[connection signal="pressed" from="level6Button" to="." method="_on_level_pressed" binds= [6]]
+[connection signal="pressed" from="level7Button" to="." method="_on_level_pressed" binds= [7]]
+[connection signal="pressed" from="level8Button" to="." method="_on_level_pressed" binds= [8]]
+[connection signal="pressed" from="level9Button" to="." method="_on_level_pressed" binds= [9]]
+[connection signal="pressed" from="level10Button" to="." method="_on_level_pressed" binds= [10]]
+[connection signal="pressed" from="level11Button" to="." method="_on_level_pressed" binds= [11]]
+[connection signal="pressed" from="level12Button" to="." method="_on_level_pressed" binds= [12]]
+[connection signal="pressed" from="level13Button" to="." method="_on_level_pressed" binds= [13]]
+[connection signal="pressed" from="level14Button" to="." method="_on_level_pressed" binds= [14]]
+[connection signal="pressed" from="level15Button" to="." method="_on_level_pressed" binds= [15]]
+[connection signal="pressed" from="level16Button" to="." method="_on_level_pressed" binds= [16]]
+[connection signal="pressed" from="level17Button" to="." method="_on_level_pressed" binds= [17]]
+[connection signal="pressed" from="level18Button" to="." method="_on_level_pressed" binds= [18]]
+[connection signal="pressed" from="level19Button" to="." method="_on_level_pressed" binds= [19]]
+[connection signal="pressed" from="level20Button" to="." method="_on_level_pressed" binds= [20]]
+[connection signal="pressed" from="level21Button" to="." method="_on_level_pressed" binds= [21]]
+[connection signal="pressed" from="level22Button" to="." method="_on_level_pressed" binds= [22]]
+[connection signal="pressed" from="level23Button" to="." method="_on_level_pressed" binds= [23]]
+[connection signal="pressed" from="level24Button" to="." method="_on_level_pressed" binds= [24]]
+[connection signal="pressed" from="level25Button" to="." method="_on_level_pressed" binds= [25]]
+[connection signal="pressed" from="resetProgressButton" to="." method="_on_reset_progress_button_pressed"]

@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://tq76bakffin3"]
+
+[ext_resource type="Script" path="res://Scripts/Resources.gd" id="1_ue0bk"]
+[ext_resource type="AudioStream" uid="uid://dtw154uliwlmp" path="res://Sounds/clickButton.mp3" id="2_wrgfo"]
+[ext_resource type="Texture2D" uid="uid://c14mosh0ytvmn" path="res://Assets/adventurekoStudiosImage.png" id="3_ra1q0"]
+[ext_resource type="Texture2D" uid="uid://1lgqpveugtfa" path="res://Assets/resourcesListImage.png" id="4_0lkme"]
+[ext_resource type="Texture2D" uid="uid://daa00rna7n74n" path="res://Assets/resourcesImage.png" id="5_kfhi6"]
+[ext_resource type="Texture2D" uid="uid://dlnpxna76pmqh" path="res://Assets/miniGameNameImage.png" id="6_8bd00"]
+[ext_resource type="Texture2D" uid="uid://ctgytkc5r3tre" path="res://Assets/miniBackButton.png" id="7_xax6f"]
+
+[sub_resource type="Theme" id="Theme_q7xw7"]
+
+[sub_resource type="GDScript" id="GDScript_pt70i"]
+script/source = "extends Button
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+"
+
+[node name="Resources" type="Node2D"]
+script = ExtResource("1_ue0bk")
+
+[node name="backgroundColor" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="backgroundColor"]
+offset_right = 375.0
+offset_bottom = 667.0
+color = Color(0.929412, 0.780392, 0.34902, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="backButton" type="Button" parent="."]
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 117.0
+offset_bottom = 113.0
+scale = Vector2(0.609336, 0.609336)
+theme = SubResource("Theme_q7xw7")
+action_mode = 0
+icon = ExtResource("7_xax6f")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="miniGameNameImage" type="Sprite2D" parent="."]
+position = Vector2(224, 36)
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("6_8bd00")
+
+[node name="resourcesImage" type="Sprite2D" parent="."]
+position = Vector2(188.724, 111)
+scale = Vector2(0.539474, 0.539474)
+texture = ExtResource("5_kfhi6")
+
+[node name="resourcesListImage" type="Sprite2D" parent="."]
+position = Vector2(188.5, 387.672)
+scale = Vector2(0.538343, 0.538343)
+texture = ExtResource("4_0lkme")
+
+[node name="adventurekoStudiosImage" type="Sprite2D" parent="."]
+position = Vector2(188.886, 643.438)
+scale = Vector2(0.909884, 0.909884)
+texture = ExtResource("3_ra1q0")
+
+[node name="clickButton" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(203.444, 1036.51)
+scale = Vector2(0.723847, 0.723847)
+stream = ExtResource("2_wrgfo")
+
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]

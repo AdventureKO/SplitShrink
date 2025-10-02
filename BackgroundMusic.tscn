@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dduphcjmji0b4"]
+
+[ext_resource type="AudioStream" uid="uid://1sow7r3afcpn" path="res://Sounds/LateNightRadio.mp3" id="1_ns3h4"]
+
+[node name="BackgroundMusic" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_ns3h4")
+autoplay = true

@@ -1,0 +1,435 @@
+[gd_scene load_steps=25 format=3 uid="uid://nqptb4nmmjd8"]
+
+[ext_resource type="Script" path="res://Scripts/PlayLevel.gd" id="1_qq11q"]
+[ext_resource type="AudioStream" uid="uid://dtw154uliwlmp" path="res://Sounds/clickButton.mp3" id="2_lu24b"]
+[ext_resource type="AudioStream" uid="uid://cdncb06lgfl8x" path="res://Sounds/winLevel.mp3" id="3_62rwm"]
+[ext_resource type="AudioStream" uid="uid://b5lilx0edth7g" path="res://Sounds/loseLevel.mp3" id="4_u0ckj"]
+[ext_resource type="AudioStream" uid="uid://ck5v5pp6w64d0" path="res://Sounds/divideButton.mp3" id="5_4ryjc"]
+[ext_resource type="AudioStream" uid="uid://b157i6y75nk73" path="res://Sounds/plusAndMinusButtons.mp3" id="6_tv77x"]
+[ext_resource type="Texture2D" uid="uid://boi547q2f3wej" path="res://Assets/mainNumberContainerImage.png" id="7_o0kq4"]
+[ext_resource type="Texture2D" uid="uid://ctgytkc5r3tre" path="res://Assets/miniBackButton.png" id="8_1nii3"]
+[ext_resource type="Texture2D" uid="uid://cu4vkycnstnva" path="res://Assets/miniRestartButton.png" id="9_aqaao"]
+[ext_resource type="Texture2D" uid="uid://b5g6w1m2y5mgm" path="res://Assets/divisorButton.png" id="10_ac5wx"]
+[ext_resource type="Texture2D" uid="uid://dlnpxna76pmqh" path="res://Assets/miniGameNameImage.png" id="11_oqnpa"]
+[ext_resource type="Texture2D" uid="uid://brevpn1khx66m" path="res://Assets/plusAndMinusButton.png" id="12_gby7f"]
+[ext_resource type="Texture2D" uid="uid://pwkg33uhkiqe" path="res://Assets/turnsLeftImage.png" id="13_0elwg"]
+[ext_resource type="Texture2D" uid="uid://cf6dm24qep76" path="res://Assets/winLevelImage.png" id="14_vuycf"]
+[ext_resource type="Texture2D" uid="uid://d08udjb56l1mc" path="res://Assets/failLevelScreenImage.png" id="15_4skux"]
+[ext_resource type="Texture2D" uid="uid://djpsy5bmsj0tl" path="res://Assets/oneStarLevelWinImage.png" id="16_cntnl"]
+[ext_resource type="Texture2D" uid="uid://dq8tl0khl80s5" path="res://Assets/twoStarLevelWinImage.png" id="17_tnw0r"]
+[ext_resource type="Texture2D" uid="uid://bhkxo5llhtowh" path="res://Assets/threeStarLevelWinImage.png" id="18_3xuuc"]
+
+[sub_resource type="Theme" id="Theme_ju6vd"]
+
+[sub_resource type="GDScript" id="GDScript_pt70i"]
+script/source = "extends Button
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_5sjau"]
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_douk3"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_4sith"]
+font_color = Color(0.0666667, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3drgs"]
+font_size = 30
+
+[node name="PlayLevel" type="Node2D"]
+script = ExtResource("1_qq11q")
+
+[node name="backgroundColor" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="backgroundColor"]
+offset_right = 375.0
+offset_bottom = 667.0
+color = Color(0.929412, 0.780392, 0.34902, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="backButton" type="Button" parent="."]
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 120.0
+offset_bottom = 116.0
+scale = Vector2(0.469189, 0.469189)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("8_1nii3")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="restartButton" type="Button" parent="."]
+offset_left = 310.0
+offset_top = 5.0
+offset_right = 418.0
+offset_bottom = 115.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("9_aqaao")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="miniGameNameImage" type="Sprite2D" parent="."]
+position = Vector2(187, 32)
+scale = Vector2(0.525, 0.525)
+texture = ExtResource("11_oqnpa")
+
+[node name="divisorButton1" type="Button" parent="."]
+offset_left = 13.0
+offset_top = 69.0
+offset_right = 335.0
+offset_bottom = 395.0
+scale = Vector2(0.412886, 0.412886)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("10_ac5wx")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="divisorButton2" type="Button" parent="."]
+offset_left = 229.0
+offset_top = 69.0
+offset_right = 551.0
+offset_bottom = 395.0
+scale = Vector2(0.412886, 0.412886)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("10_ac5wx")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="divisorButton3" type="Button" parent="."]
+offset_left = 9.0
+offset_top = 461.0
+offset_right = 331.0
+offset_bottom = 787.0
+scale = Vector2(0.412886, 0.412886)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("10_ac5wx")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="divisorButton4" type="Button" parent="."]
+offset_left = 230.0
+offset_top = 461.0
+offset_right = 552.0
+offset_bottom = 787.0
+scale = Vector2(0.412886, 0.412886)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("10_ac5wx")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="divisor1Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 70.0
+offset_top = 104.0
+offset_right = 134.0
+offset_bottom = 176.0
+text = "1"
+label_settings = SubResource("LabelSettings_5sjau")
+
+[node name="divisor2Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 286.0
+offset_top = 104.0
+offset_right = 350.0
+offset_bottom = 176.0
+text = "1"
+label_settings = SubResource("LabelSettings_5sjau")
+
+[node name="divisor3Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 62.0
+offset_top = 496.0
+offset_right = 126.0
+offset_bottom = 568.0
+text = "1"
+label_settings = SubResource("LabelSettings_5sjau")
+
+[node name="divisor4Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 283.0
+offset_top = 496.0
+offset_right = 347.0
+offset_bottom = 568.0
+text = "1"
+label_settings = SubResource("LabelSettings_5sjau")
+
+[node name="plusOneButton" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 240.0
+offset_right = 117.0
+offset_bottom = 343.0
+scale = Vector2(0.5351, 0.5351)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("12_gby7f")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="plusOneButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 20.5569
+offset_top = 26.1633
+offset_right = 4.5549
+offset_bottom = 3.6633
+scale = Vector2(2.2, 2.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+1"
+horizontal_alignment = 1
+
+[node name="plusTwoButton" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 298.0
+offset_right = 117.0
+offset_bottom = 401.0
+scale = Vector2(0.5351, 0.5351)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("12_gby7f")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="plusTwoButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 20.5569
+offset_top = 26.1633
+offset_right = 4.5549
+offset_bottom = 3.6633
+scale = Vector2(2.2, 2.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+2"
+horizontal_alignment = 1
+
+[node name="plusThreeButton" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 357.0
+offset_right = 117.0
+offset_bottom = 460.0
+scale = Vector2(0.5351, 0.5351)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("12_gby7f")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="plusThreeButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 20.5569
+offset_top = 26.1633
+offset_right = 4.5549
+offset_bottom = 3.6633
+scale = Vector2(2.2, 2.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+3"
+horizontal_alignment = 1
+
+[node name="minusOneButton" type="Button" parent="."]
+offset_left = 311.0
+offset_top = 237.0
+offset_right = 413.0
+offset_bottom = 340.0
+scale = Vector2(0.5351, 0.5351)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("12_gby7f")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="minusOneButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 20.5569
+offset_top = 26.1633
+offset_right = 4.5549
+offset_bottom = 3.6633
+scale = Vector2(2.2, 2.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "-1"
+horizontal_alignment = 1
+
+[node name="minusTwoButton" type="Button" parent="."]
+offset_left = 311.0
+offset_top = 295.0
+offset_right = 413.0
+offset_bottom = 398.0
+scale = Vector2(0.5351, 0.5351)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("12_gby7f")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="minusTwoButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 20.5569
+offset_top = 26.1633
+offset_right = 4.5549
+offset_bottom = 3.6633
+scale = Vector2(2.2, 2.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "-2"
+horizontal_alignment = 1
+
+[node name="minusThreeButton" type="Button" parent="."]
+offset_left = 311.0
+offset_top = 354.0
+offset_right = 413.0
+offset_bottom = 457.0
+scale = Vector2(0.5351, 0.5351)
+theme = SubResource("Theme_ju6vd")
+action_mode = 0
+icon = ExtResource("12_gby7f")
+flat = true
+script = SubResource("GDScript_pt70i")
+
+[node name="Label" type="Label" parent="minusThreeButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 0.5
+offset_left = 20.5569
+offset_top = 26.1633
+offset_right = 4.5549
+offset_bottom = 3.6633
+scale = Vector2(2.2, 2.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "-3"
+horizontal_alignment = 1
+
+[node name="mainNumberContainerImage" type="Sprite2D" parent="."]
+position = Vector2(191, 328)
+scale = Vector2(0.667338, 0.667339)
+texture = ExtResource("7_o0kq4")
+
+[node name="mainValueLabel" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 112.0
+offset_top = 300.0
+offset_right = 272.0
+offset_bottom = 364.0
+text = "0.0"
+label_settings = SubResource("LabelSettings_douk3")
+horizontal_alignment = 1
+autowrap_mode = 1
+clip_text = true
+
+[node name="turnsLeftImage" type="Sprite2D" parent="."]
+position = Vector2(189.712, 639)
+scale = Vector2(0.538461, 0.538461)
+texture = ExtResource("13_0elwg")
+
+[node name="turnsLeftLabel" type="Label" parent="."]
+offset_left = 232.0
+offset_top = 628.0
+offset_right = 272.0
+offset_bottom = 654.0
+text = "1"
+label_settings = SubResource("LabelSettings_4sith")
+
+[node name="winLevelImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(192, 280)
+scale = Vector2(0.621154, 0.621154)
+texture = ExtResource("14_vuycf")
+
+[node name="turnsTakenLabel" type="Label" parent="."]
+visible = false
+offset_left = 259.0
+offset_top = 375.0
+offset_right = 315.0
+offset_bottom = 420.0
+text = "1"
+label_settings = SubResource("LabelSettings_3drgs")
+
+[node name="failLevelImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(192, 489)
+scale = Vector2(0.600917, 0.600917)
+texture = ExtResource("15_4skux")
+
+[node name="oneStarLevelWinImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(192, 299)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("16_cntnl")
+
+[node name="twoStarLevelWinImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(192, 299)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("17_tnw0r")
+
+[node name="threeStarLevelWinImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(192, 299)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("18_3xuuc")
+
+[node name="clickButton" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(201.677, 616.291)
+scale = Vector2(0.530893, 0.530894)
+stream = ExtResource("2_lu24b")
+
+[node name="divide" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(201.677, 616.291)
+scale = Vector2(0.530893, 0.530894)
+stream = ExtResource("5_4ryjc")
+
+[node name="plusAndMinus" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(201.677, 616.291)
+scale = Vector2(0.530893, 0.530894)
+stream = ExtResource("6_tv77x")
+
+[node name="winLevel" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(201.677, 616.291)
+scale = Vector2(0.530893, 0.530894)
+stream = ExtResource("3_62rwm")
+
+[node name="loseLevel" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(201.677, 616.291)
+scale = Vector2(0.530893, 0.530894)
+stream = ExtResource("4_u0ckj")
+
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="restartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="divisorButton1" to="." method="_on_divisor_button_1_pressed"]
+[connection signal="pressed" from="divisorButton2" to="." method="_on_divisor_button_2_pressed"]
+[connection signal="pressed" from="divisorButton3" to="." method="_on_divisor_button_3_pressed"]
+[connection signal="pressed" from="divisorButton4" to="." method="_on_divisor_button_4_pressed"]
+[connection signal="pressed" from="plusOneButton" to="." method="_on_plus_one_button_pressed"]
+[connection signal="pressed" from="plusTwoButton" to="." method="_on_plus_two_button_pressed"]
+[connection signal="pressed" from="plusThreeButton" to="." method="_on_plus_three_button_pressed"]
+[connection signal="pressed" from="minusOneButton" to="." method="_on_minus_one_button_pressed"]
+[connection signal="pressed" from="minusTwoButton" to="." method="_on_minus_two_button_pressed"]
+[connection signal="pressed" from="minusThreeButton" to="." method="_on_minus_three_button_pressed"]
